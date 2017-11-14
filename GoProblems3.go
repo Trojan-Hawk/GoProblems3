@@ -41,7 +41,14 @@ func ElizaResponse(inputString string) string {
 	subString := regXp.FindStringSubmatch(inputString)
 	
 	if len(subString) > 1 {
+		// replacing the full stop with a question mark
 		str := strings.Replace(subString[1], ".", "?", 1)
+		// reflecting the pronouns in the captured groups
+		str = strings.Replace(str, "you’re", "I'm", 1)
+		str = strings.Replace(str, "your", "my", 1)
+		str = strings.Replace(str, "you", "I", 1)
+		str = strings.Replace(str, "me", "you", 1)
+		
 		return "How do you know you are" + str
 	}
 	
@@ -75,4 +82,7 @@ func main() {
 	fmt.Println(ElizaResponse("I am not sure that you understand the effect that your questions are having on me."))
 	fmt.Println("I am supposed to just take what you’re saying at face value?")
 	fmt.Println(ElizaResponse("I am supposed to just take what you’re saying at face value?"))
+	
+	// More input patterns
+	
 }// main
