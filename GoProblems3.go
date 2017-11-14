@@ -4,7 +4,6 @@
 // Resources
 // https://golang.org/pkg/math/rand/#Rand.Intn
 // https://golang.org/pkg/regexp/
-// 
 
 package main
 
@@ -28,7 +27,7 @@ var feelings = []string {
 	"not very good.",
 	"pretty good.",
 	"could be better.",
-}
+}// feelings
 
 // function that takes a string and returns a response string
 func ElizaResponse(inputString string) string {
